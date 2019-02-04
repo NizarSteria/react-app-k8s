@@ -17,6 +17,28 @@ You will also see any lint errors in the console.
 Launches the test runner in the interactive watch mode.<br>
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
+### DOCKER
+``` bash
+# build
+docker build -t harounaouissaoui/react-app:v1 .
+# RUN
+docker run -d -p 8080:80 harounaouissaoui/react-app:v1
+# Tag and push
+docker login
+docker tag harounaouissaoui/react-app:v1 react-app
+docker push YOUR_DOCKERHUB_NAME/react-app
+```
+
+### KUBERNETES
+``` bash
+# Start the pod as
+ kubectl create -f kube-react.yaml
+ kubectl get pods
+ kubectl get deployments
+ minikube service react-service
+
+```
+
 
 ## Learn More
 
@@ -48,24 +70,4 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
 
-### DOCKER
-``` bash
-# build
-docker build -t harounaouissaoui/vue-app:v1 .
-# RUN
-docker run -d -p 8080:80 harounaouissaoui/vue-app:v1
-# Tag and push
-docker login
-docker tag harounaouissaoui/vue-app:v1 vue-app
-docker push YOUR_DOCKERHUB_NAME/vue-app
-```
 
-### KUBERNETES
-``` bash
-# Start the pod as
- kubectl create -f kube-vue.yaml
- kubectl get pods
- kubectl get deployments
- minikube service angular-service
-
-```
